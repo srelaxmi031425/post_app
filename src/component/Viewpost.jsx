@@ -40,62 +40,33 @@ useEffect(()=>{fetchData()},[])
   return (
     <div>
 <NavigationBar/>
-<div className="container">
-    <div className="row">
-        <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-<div className="row g-3">
-    {post.map(
-        (value,index)=>{
+<div className="container mt-4">
+      <div className="row">
+        <div className="col-12">
+          <table className="table table-bordered table-striped table-hover text-center">
+            <thead className="table-dark">
+              <tr>
+                <th>User ID</th>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Body</th>
+              </tr>
+            </thead>
 
-return(
-
- <div className="col col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
-
-
-
-<table border="1" cellpadding="8" cellspacing="0">
-  <thead>
-    <tr>
-      <th>User ID</th>
-      <th>ID</th>
-      <th>Title</th>
-      <th>Body</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>{value.userId}</td>
-      <td>{value.id}</td>
-      <td>{value.title}</td>
-      <td>{value.body}</td>
-    </tr>
-  </tbody>
-</table>
-
-
-
-    </div>
-
-
-
-)
-
-
-
-        }
-    )}
-
-
-
-
-
-   
-</div>
-
-
+            <tbody>
+              {post.map(post => (
+                <tr key={post.id}>
+                  <td>{post.userId}</td>
+                  <td>{post.id}</td>
+                  <td>{post.title}</td>
+                  <td>{post.body}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
+      </div>
     </div>
-</div>
 
 
 
